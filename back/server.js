@@ -1,5 +1,6 @@
 const app=require("./app")
 const connectDatabase = require("./configuracion/database");
+
 //Setear el archivo de configuración ////setear el archivo de configuracion (``, ``); node back/server.js , npm i nodemon --save-dev (esto para instalar nuevas dependencias)
 const dotenv=require("dotenv");
 const { connect } = require("mongoose");

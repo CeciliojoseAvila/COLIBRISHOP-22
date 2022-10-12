@@ -1,5 +1,5 @@
 const producto=require("../models/productos")
-//const fetch =(url)=>import('node-fetch').then(({default:fetch})=>fetch(url)); //Usurpación del require
+const fetch =(url)=>import('node-fetch').then(({default:fetch})=>fetch(url)); //Usurpación del require
 
 //Ver la lista de productos
 exports.getProducts=async (req,res,next) =>{
@@ -81,11 +81,11 @@ exports.newProduct=async(req,res,next)=>{
 //verProductos(); LLamamos al metodo creado para probar la consulta
 
 //Ver por id
-/*function verProductoPorID(id){
+function verProductoPorID(id){
     fetch('http://localhost:4000/api/producto/'+id)
     .then(res=>res.json())
     .then(res=>console.log(res))
     .catch(err=>console.error(err))
-}*/
+}
 
 //verProductoPorID('63456a8d9163cb9dbbcaa235'); Probamos el metodo con un id
