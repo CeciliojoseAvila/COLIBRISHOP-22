@@ -17,3 +17,4 @@ const server=app.listen(process.env.PORT, () => {
 //DESPUES DE MODIFICAR Y CREAR LOS NUEVOS= "start": "node back/server.js", "dev":"SET NODE_ENV=DEVELOPMENT& nodemon back/server", "prod":"SET NODE_ENV=PRODUCTION& nodemon back/server"
 // EJECUTAMOS EL SGTE COMANDO "npm run dev" sin las comillas. 
 // para arrancar el servidor = npm run dev
+//Llamemos al server

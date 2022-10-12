@@ -6,7 +6,6 @@ app.use(express.json());
 //Importar rutas
 const productos=require("./routes/products")
 
-app.use('/api', productos) //sugeto a modificacion
+app.use('/api',productos) //Sujeto a decision (ruta del navegador)
 
 module.exports=app
-//hacemos consultas desde el terminal de VSC cd .. hasta llegar a la c. raiz  / cd "Program Files"
