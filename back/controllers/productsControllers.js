@@ -79,7 +79,6 @@ exports.newProduct=async(req,res,next)=>{
 }
 
 //verProductos(); LLamamos al metodo creado para probar la consulta
-
 //Ver por id
 function verProductoPorID(id){
     fetch('http://localhost:4000/api/producto/'+id)
@@ -87,5 +86,6 @@ function verProductoPorID(id){
     .then(res=>console.log(res))
     .catch(err=>console.error(err))
 }
-
+//verProductoPorID('6345f904015fcb43fb5691eb'); para ver por id en consola de vsc
+//verProducto();
 //verProductoPorID('63456a8d9163cb9dbbcaa235'); Probamos el metodo con un id
