@@ -85,4 +85,4 @@ const productosSchema=mongoose.Schema({
 
 })
 
-module.exports=mongoose.model("productos",productosSchema)
+module.exports=mongoose.model("productos", productosSchema)

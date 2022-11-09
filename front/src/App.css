@@ -5,17 +5,13 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;  
-
-  overflow: visible;
-  background-color: hsl(82, 25%, 94%);
-  
+  overflow-x: hidden;
 }
 
 /* Scroll Bar */
 
 ::-webkit-scrollbar-track {
-  background-color: #110ed3;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar {
@@ -31,7 +27,7 @@ body {
 }
 
 nav {
-  background-color: #30aa90;
+  background-color: #232f3e;
   padding: 1rem 1rem;
 }
 
@@ -43,7 +39,7 @@ nav {
   width: 90%;
   margin-right: 35%;
 }
-f
+
 #search_field {
   height: 2.4rem;
   padding: 1rem;
@@ -58,14 +54,14 @@ f
 
 #cart {
   font-size: 1rem;
-  color: rgb(6, 23, 177);
+  color: white;
 }
 
 #cart_count {
   background-color: #febd69;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
-  color: rgb(23, 20, 175);
+  color: black;
   font-weight: bold;
   font-size: 0.9rem;
 }
@@ -80,7 +76,7 @@ f
 }
 
 .card-title a {
-  color: #0e0101;
+  color: #2e2e2e;
 }
 
 .card-title a:hover {
@@ -98,7 +94,7 @@ f
 
 #view_btn {
   background-color: #fa9c23;
-  color: rgb(18, 4, 146);
+  color: white;
 }
 
 .card-img-top {
@@ -113,14 +109,14 @@ f
 
 #no_of_reviews {
   font-size: 0.85rem;
-  color: rgb(23, 28, 94);
+  color: grey;
   margin-left: 0.5rem;
 }
 
 /* Footer */
 footer {
   margin-top: 8rem;
-  color: rgb(14, 1, 1);
+  color: grey;
   bottom: 0;
   width: 100%;
 }
@@ -154,7 +150,7 @@ footer {
 
 /* Product Details Page */
 #product_id {
-  color: rgb(209, 14, 14);
+  color: grey;
   font-size: 0.8rem;
 }
 
@@ -172,7 +168,7 @@ footer {
 }
 
 #product_seller {
-  color: rgb(168, 24, 24);
+  color: grey;
   font-size: 0.9rem;
 }
 
@@ -232,7 +228,7 @@ footer {
 }
 
 .cart-item a {
-  color: rgb(201, 5, 5);
+  color: grey;
 }
 
 #delete_cart_item {
@@ -263,7 +259,7 @@ footer {
 }
 
 #order_summary {
-  border: 1px solid #740505;
+  border: 1px solid #e3e3e3;
   border-radius: 1rem;
   padding: 2rem 1.5rem;
 }
@@ -286,7 +282,7 @@ footer {
 
 .stockCounter input::-webkit-outer-spin-button,
 .stockCounter input::-webkit-inner-spin-button {
-  -webkit-appearance: none ;
+  -webkit-appearance: none;
   margin: 0;
 }
 
@@ -319,7 +315,7 @@ footer {
 
 .wrapper form a {
   font-size: 0.9rem;
-  color: rgb(13, 102, 27);
+  color: grey;
 }
 
 /* Avatar */
@@ -378,7 +374,7 @@ footer {
   letter-spacing: 1px;
   line-height: 30px;
   padding: 5px 10px 5px 15px;
-  color: rgb(158, 1, 1);
+  color: grey;
   text-decoration: none;
   cursor: default;
   font-weight: bold;
@@ -425,9 +421,9 @@ footer {
 .triangle2-incomplete {
   width: 0;
   float: left;
-  border-top: 20px solid #8e65afa9;
-  border-left: 15px solid rgb(151, 117, 117);
-  border-bottom: 20px solid #a83d3d;
+  border-top: 20px solid #eeeeee;
+  border-left: 15px solid #fff;
+  border-bottom: 20px solid #eeeeee;
   margin-right: -1px;
 }
 
@@ -440,7 +436,7 @@ footer {
 
 .user-info h4 {
   font-weight: 800;
-  color: rgb(7, 1, 1);
+  color: grey;
   margin-top: 2rem;
 }
 
@@ -502,8 +498,8 @@ footer {
 #sidebar {
   min-width: 100%;
   max-width: 100%;
-  background: #145bb3;
-  color: rgb(88, 170, 20);
+  background: #232f3e;
+  color: #fff;
   transition: all 0.3s;
 }
 #sidebar.active {
@@ -512,7 +508,7 @@ footer {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #fd1505;
+  background: #232f3e;
 }
 #sidebar ul.components {
   padding: 5px 0px;
@@ -528,7 +524,7 @@ footer {
 }
 #sidebar ul li a:hover {
   color: #232f3e;
-  background: rgb(6, 8, 146);
+  background: #fff;
 }
 
 #sidebar ul li a i {
@@ -537,9 +533,8 @@ footer {
 
 #sidebar ul li.active > a,
 a[aria-expanded='true'] {
-  color: rgb(62, 185, 45);
+  color: #fff;
   background: #232f3e;
- 
 }
 a[data-toggle='collapse'] {
   position: relative;
@@ -555,7 +550,7 @@ a[data-toggle='collapse'] {
 ul ul a {
   font-size: 1rem !important;
   padding-left: 30px !important;
-  background: #03408b;
+  background: #232f3e;
 }
 
 ul.CTAs {
@@ -600,7 +595,7 @@ ul.CTAs a {
   list-style: none;
   font-size: 3rem;
   padding-left: 0.9rem;
-  color: #3129a1;
+  color: #e3e3e3;
 }
 
 .star:first-child {
@@ -617,5 +612,5 @@ ul.CTAs a {
 
 .review_user {
   font-size: 0.8rem;
-  color: rgb(6, 57, 114);
+  color: grey;
 }
