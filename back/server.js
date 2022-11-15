@@ -1,13 +1,23 @@
 const app=require("./app")
 const connectDatabase = require("./configuracion/database");
+const cloudinary = require("cloudinary")
 
 //Setear el archivo de configuración ////setear el archivo de configuracion (``, ``); node back/server.js , npm i nodemon --save-dev (esto para instalar nuevas dependencias)
 const dotenv=require("dotenv");
 const { connect } = require("mongoose");
 dotenv.config({path: 'back/configuracion/configur.env'})
 
+
 //configurar base de datos
 connectDatabase();
+
+
+//Configurar Cloudinary
+cloudinary.config({
+    cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
+    api_key:process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+})
 
 //LAMEMOS AL SERVER
 const server=app.listen(process.env.PORT, () => {

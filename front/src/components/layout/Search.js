@@ -1,4 +1,4 @@
-i/*mport React, {useState} from 'react'
+import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export const Search = () => {
@@ -38,4 +38,4 @@ export const Search = () => {
   );
 };
 
-export default Search */
+export default Search 

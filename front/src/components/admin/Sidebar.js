@@ -25,15 +25,15 @@ const Sidebar = () => {
                     </li>
 
                     <li>
-                        <Link to="/admon/orders"><i className="fa fa-shopping-basket"></i> <h4>Pedidos</h4></Link>
+                        <Link to="/admin/orders"><i className="fa fa-shopping-basket"></i> <h4>Pedidos</h4></Link>
                     </li>
 
                     <li>
-                        <Link to="/admon/users"><i className="fa fa-users"></i> <h4>Usuarios</h4></Link>
+                        <Link to="/admin/users"><i className="fa fa-users"></i> <h4>Usuarios</h4></Link>
                     </li>
 
                     <li>
-                        <Link to="/admon/reviews"><i className="fa fa-star"></i> <h4>Usuarios</h4>Opiniones</Link>
+                        <Link to="/admin/reviews"><i className="fa fa-star"></i> <h4>Usuarios</h4>Opiniones</Link>
                     </li>
 
                 </ul>
