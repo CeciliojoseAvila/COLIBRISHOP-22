@@ -1,8 +1,9 @@
 const express=require("express")
 const router=express.Router();
 
-const {getProducts, newProduct, getProductById, updateProduct,
-    deleteProduct, createProductReview, getProductReviews, deleteReview } = require("../controllers/productsControllers"); //Traemos la respuesta json desde el controlador
+const {getProducts, newProduct, getProductById, 
+    updateProduct, deleteProduct, 
+    createProductReview, getProductReviews, deleteReview } = require("../controllers/productsControllers"); //Traemos la respuesta json desde el controlador
 const { isAuthenticatedUser , authorizeRoles} = require("../middleware/auth");
 
 

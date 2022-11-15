@@ -1,79 +1,44 @@
-import React, { Fragment, useState} from 'react'
+import React, { Fragment} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
 import MetaData from '../layout/MetaData'
 
 
 const Cart = () => {
-    const [quantity, setQuantity] = useState(1)
+    const dispatch= useDispatch();
+    const {cartItems} = useSelector(state => state.cart)
 
-    const increaseQty = () => {
-        const contador = document.querySelector('.count')
-        const qty = contador.valueAsNumber+1;
-        setQuantity(qty)
+    const increaseQty = (id, quantity, inventario) => {
+        const newQty = quantity+1;
+        if (newQty > inventario) return;
+        dispatch(addItemToCart(id, newQty))
      }
   
-     const decreaseQty = () => {
-      const contador = document.querySelector('.count')
-  
-      const qty = contador.valueAsNumber-1;
-      setQuantity(qty)
+     const decreaseQty = (id, quantity) => {
+        const newQty = quantity-1;
+        if (newQty <= 0) return;
+        dispatch(addItemToCart(id, newQty))
    }
 
-    //Json de ejemplo
-   let cartItems=[
-        {
-            "_id": "66358c19f84ad54307cd60e9c",
-            "nombre": "ACAFE LAVADO 500 GR",
-            "precio": 40000,
-            "imagen": "../images/productos/empaque-lavado-venta.jpg",
-            "inventario": 40,
-        },
-        {
-            "_id": "635954020014b761860b52ca",
-            "nombre": "Cafe Honey 500 Gr",
-            "precio": 30000,
-            "imagen": "../images/productos/honey.jpg",
-            "inventario": 120,
-        },
-        {
-            "_id": "63613a0da8f3710acbfba991",
-            "nombre": "Cafe Lavado 250 Gr",
-            "precio": 20000,
-            "imagen": "../images/productos/empaque-lavado-venta.jpg",
-            "inventario": 20,
-        },
-        {
-            "_id": "636331f9f525d7fbb97cfdcf",
-            "nombre": "CAFE NATURAL 500 GR",
-            "precio":  40000,
-            "imagen":  "../images/productos/natural-venta.jpg",
-            "inventario": 200,
-        },
-        {
-            "_id": "63670a6bdfb1702bbe8f1dd3",
-            "nombre": "cafe Juan Valdez",
-            "precio":  45000,
-            "imagen":  "../images/productos/cafe-juanvaldez.jpg",
-            "inventario": 200,
-        }
-    ]
-
-cartItems = Array.from(cartItems);
+   const removeCartItemHandler= (id)=>{
+    dispatch(removeItemFromCart(id))
+   }
 
     return (
         <Fragment>
-            <MetaData title={'Your Cart'} />
+            <MetaData title={'Mi carrito'} />
             
 
             {cartItems.length === 0 ? <h2 className="mt-5">Su carrito esta vacio</h2> : (
                 <Fragment>
                     
-                    <h2 className="mt-5">Su Carrito: <b>{cartItems.length} items</b></h2>
+                    <h2 className="mt-5">Su Carrito: <b>{cartItems.reduce((acc, item)=>(acc+Number(item.quantity)),0)} items</b></h2>
 
                     <div className="row d-flex justify-content-between">
                         <div className="col-12 col-lg-8">
 
-                        {cartItems && cartItems.map (item => (
+                        {cartItems && cartItems.map(item => (
                                 <Fragment>
                                     <hr />
 
@@ -84,7 +49,7 @@ cartItems = Array.from(cartItems);
                                             </div>
 
                                             <div className="col-5 col-lg-3">
-                                                <Link to={`/producto/${item._id}`}>{item.nombre}</Link>
+                                                <Link to={`/producto/${item.product}`}>{item.nombre}</Link>
                                             </div>
 
 
@@ -94,16 +59,16 @@ cartItems = Array.from(cartItems);
 
                                             <div className="col-4 col-lg-3 mt-4 mt-lg-0">
                                                 <div className="stockCounter d-inline">
-                                                    <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
+                                                    <span className="btn btn-danger minus" onClick={() => decreaseQty(item.product, item.quantity)}>-</span>
 
-                                                    <input type="number" className="form-control count d-inline" value={quantity} readOnly />
+                                                    <input type="number" className="form-control count d-inline" value={item.quantity} readOnly />
 
-                                                    <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
+                                                    <span className="btn btn-primary plus" onClick={()=>increaseQty(item.product, item.quantity, item.inventario)}>+</span>
                                                 </div>
                                             </div>
 
                                             <div className="col-4 col-lg-1 mt-4 mt-lg-0">
-                                                <i id="delete_cart_item" className="fa fa-trash btn btn-danger" ></i>
+                                                <i id="delete_cart_item" className="fa fa-trash btn btn-danger" onClick={() => removeCartItemHandler(item.product)}></i>
                                             </div>
 
                                         </div>
@@ -118,11 +83,11 @@ cartItems = Array.from(cartItems);
                             <div id="order_summary">
                                 <h4>Total de la Compra</h4>
                                 <hr />
-                                <p> Subtotal:  <span className="order-summary-values">$350.000</span></p>
-                                <p>Est. total: <span className="order-summary-values">$380.000</span></p>
+                                <p>Productos:  <span className="order-summary-values">{cartItems.reduce((acc, item)=>(acc+Number(item.quantity)),0)} (Unidades)</span></p>
+                                <p>Est. total: <span className="order-summary-values">${cartItems.reduce((acc, item)=> acc+(item.quantity*item.precio),0).toFixed(2)}</span></p>
 
                                 <hr />
-                                <button id="checkout_btn" className="btn btn-primary btn-block"> <h5>Comprar!</h5></button>
+                                <button id="checkout_btn" className="btn btn-primary btn-block">Comprar!</button>
                             </div>
                         </div>
                     </div>
