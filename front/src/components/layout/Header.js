@@ -1,4 +1,3 @@
-
 import React, { Fragment } from 'react'
 import "../../App.css"
 import { Link } from "react-router-dom"
@@ -8,6 +7,8 @@ import { useAlert } from 'react-alert'
 import { logout} from "../../actions/userActions"
 
 const Header = () => {
+    const {cartItems} = useSelector(state=>state.cart)
+    
     const alert= useAlert();
     const dispatch= useDispatch();
 
@@ -24,6 +25,7 @@ const Header = () => {
                     <div className='navbar-brand'>
 
                         <Link to="/" ><img src="./images/productos/colibrishop-logo.jpg" alt="COLIBRISHOP 22"></img></Link>
+                        
                         </div>
                 </div>
 
@@ -34,7 +36,7 @@ const Header = () => {
                 {/*Boton inicio sesión*/}
                 <div className="col-12 col-md-4 mt-4 mt-md-0 text-center">
                     <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
-                        <span className="ml-1" id="cart_count">2</span></Link>
+                        <span className="ml-1" id="cart_count">{cartItems.length}</span></Link>
 
                     {user ? (
                         <div className="ml-4 dropdown d-inline">
@@ -54,7 +56,7 @@ const Header = () => {
                                     <Link className="dropdown-item" to="/dashboard">Adm. Productos</Link>
                                 )}
 
-                                <Link className="dropdown-item" to="/">Pedidos</Link>
+                                <Link className="dropdown-item" to="/myOrders">Pedidos</Link>
                                 <Link className="dropdown-item" to="/yo">Mi Perfil</Link>
                                 <Link className="dropdown-item" to="/" onClick={logoutHandler}>Cerrar Sesion</Link>
                             </div>
