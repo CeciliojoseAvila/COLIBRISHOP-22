@@ -22,8 +22,8 @@ const NewProduct = () => {
 
     const categorias = [
         "Alimento seco",
-        "Cafe molido",
-        "cafe capuchino",
+        "Café molido",
+        "Café capuchino",
         "Alimento humedo",
         "Accesorios",
         "Cuidado e Higiene",
@@ -103,7 +103,7 @@ const NewProduct = () => {
                 <div className="col-12 col-md-10">
                     <Fragment>
                         <div className="wrapper my-5">
-                            <form className="shadow-lg"  encType='multipart/form-data'>
+                            <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
                                 <h1 className="mb-4">Nuevo Producto</h1>
 
                                 <div className="form-group">
@@ -199,7 +199,6 @@ const NewProduct = () => {
                                     type="submit"
                                     className="btn btn-block py-3"
                                     disabled={loading ? true : false}
-                                    onSubmit={submitHandler}
                                 >
                                     CREATE
                                 </button>

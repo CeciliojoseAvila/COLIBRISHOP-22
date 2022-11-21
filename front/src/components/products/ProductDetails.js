@@ -149,7 +149,9 @@ export const ProductDetails = () => {
               <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.inventario === 0} onClick={addToCart}>Agregar al Carrito</button>
               <hr />
               <p>Estado: <span id="stock_stado" className={product.inventario > 0 ? 'greenColor' : 'redColor'}>{product.inventario > 0 ? "En existencia" : "Agotado"}</span></p>
-              <hr />
+             <hr />
+              <p id="categoria">Categoria: <strong>{product.categoria}</strong></p>
+             <hr />
               <h4 className="mt-2">Descripción:</h4>
               <p>{product.descripcion}</p>
               <hr />
@@ -212,27 +214,3 @@ export const ProductDetails = () => {
 
   )
 }
-
-/* esta linea funciona 
-export const ProductDetails = () => {
-
-  return (
-    <Fragment>
-        <MetaData title={"CAFE NATURAL EN GRANO" }></MetaData>
-        <div className='row d-flex justify-content-around'>
-          <div className='col-12 col-lg-5 img-fluid' id="imagen_producto"> 
-          <img  src="../images/productos/natural-venta.jpg" alt='imagen_producto' height="450" width="450" ></img>
-          </div>
-
-            <div className='col-12 col-lg-5 mt-5'> <h3> CAFE NATURAL </h3>
-            <h3 >PRESENTACION: 500 GR</h3>
-            <p id="product_id">Product #3253256</p>
-            <p >TIPO DE CAFE: EN GRANO</p>
-            <p >TUESTE: MEDIO</p>
-            
-            </div>
-
-          </div> 
-    </Fragment>
-  )
-}*/

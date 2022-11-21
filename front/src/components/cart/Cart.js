@@ -4,23 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
 import MetaData from '../layout/MetaData'
 
-// const {carro} = this.state
-//     if(carro.find(x=> x.name  === producto.name)){
-//         const newCart = carro.map(x => x.name === producto.name?({...x,cantidad: x.cantidad + 1}):x
-//         )
-//         return this.setState({carro:newCart})
-//     }
-
-//     return this.setState({
-//         carro: this.state.carro.concat(
-//             {
-//                 ...producto,
-//                 cantidad: 1
-//             }
-//         )
-//     })
-
-
 const Cart = () => {
     const navigate=useNavigate()
     const dispatch= useDispatch();
@@ -125,3 +108,21 @@ const Cart = () => {
 }
 
 export default Cart
+
+
+//ensayo para boton sumar + en carrito
+// const {carro} = this.state
+//     if(carro.find(x=> x.name  === producto.name)){
+//         const newCart = carro.map(x => x.name === producto.name?({...x,cantidad: x.cantidad + 1}):x
+//         )
+//         return this.setState({carro:newCart})
+//     }
+
+//     return this.setState({
+//         carro: this.state.carro.concat(
+//             {
+//                 ...producto,
+//                 cantidad: 1
+//             }
+//         )
+//     })
