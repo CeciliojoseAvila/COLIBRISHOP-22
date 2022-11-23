@@ -8,7 +8,7 @@ const cloudinary = require("cloudinary")
  dotenv.config({path: 'back/configuracion/configur.env'})
 
 //Seteamos archivo de configuracion
-if(process.env.NODE_ENV==="PRODUCTION") require('dotenv').config({path:'back/configuracion/configur.env'})
+if(process.env.NODE_ENV ==="PRODUCTION") require('dotenv').config({path:'back/configuracion/configur.env'})
 
 
 //configurar base de datos
