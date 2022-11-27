@@ -4,11 +4,7 @@ const cloudinary = require("cloudinary")
 
 //Setear el archivo de configuración ////setear el archivo de configuracion (``, ``); node back/server.js , npm i nodemon --save-dev (esto para instalar nuevas dependencias)
  //const dotenv=require("dotenv"); 
-<<<<<<< HEAD
  //const { connect } = require("mongoose");
-=======
-// const { connect } = require("mongoose");
->>>>>>> e4e07c18996aa885c33c171d13a339ef732888a2
  //dotenv.config({path: 'back/configuracion/configur.env'})
 
 //Seteamos archivo de configuracion

@@ -38,7 +38,10 @@ const productosSchema=mongoose.Schema({
         required:[true,"Por favor seleccione la categoria del producto."],
         enum:{
             values:[
+                "Café molido",
                 "Alimento seco",
+                "Café Variado",
+                "Café capuchino",
                 "Alimento humedo",
                 "Accesorios",
                 "Cuidado e Higiene",

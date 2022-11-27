@@ -21,8 +21,9 @@ const NewProduct = () => {
     const [imagenPreview, setImagenPreview] = useState([])
 
     const categorias = [
-        "Alimento seco",
         "Café molido",
+        "Alimento seco",
+        "Café Variado",
         "Café capuchino",
         "Alimento humedo",
         "Accesorios",
